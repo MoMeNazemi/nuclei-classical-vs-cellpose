@@ -1,0 +1,23 @@
+# Data is downloaded separately (see README) and never committed
+data/
+
+# Generated outputs: regenerate with the scripts
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+.venv/
+venv/
+
+# PyCharm
+.idea/
+
+# Operating-system clutter
+Thumbs.db
+desktop.ini
+.DS_Store

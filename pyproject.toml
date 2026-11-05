@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nuclei"
+version = "0.1.0"
+description = "Nuclei segmentation and measurement on BBBC039: classical baseline vs Cellpose-SAM, with object-level validation."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Mohammad Mehdi Nazemi" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-image>=0.21",
+    "matplotlib",
+    "pandas",
+    "tifffile",
+    "imageio",
+]
+
+[project.urls]
+Repository = "https://github.com/MoMeNazemi/nuclei-classical-vs-cellpose"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+# Install PyTorch with GPU support FIRST (see README), then: pip install -e ".[cellpose]"
+cellpose = ["cellpose==4.2.1.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# scikit-image and Cellpose trigger library-internal warnings; they aren't ours
+filterwarnings = ["ignore::DeprecationWarning", "ignore:Sparse invariant checks:UserWarning"]
