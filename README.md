@@ -246,9 +246,7 @@ pip install -e ".[cellpose]"
 
 ## How this was built
 
-Built with an AI coding assistant (Claude), which wrote most of the code and
-proposed the analyses. I chose the project, ran every experiment on my own
-machine, checked the outputs and made the decisions recorded above.
+Built with an AI coding assistant (Claude), which wrote most of the code.
 
 ## Data and licence
 
